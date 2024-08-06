@@ -1,0 +1,13 @@
+<div class="col-md-3">
+
+  <div class="product-box">
+    <img src="{{urlImage}}" alt="{{name}}">
+    <h2 class="card-text">
+      {{name}}
+    </h2>
+    <div class="price">Precio: ${{price}}</div>
+    <div class="product-show">
+      <a [routerLink]="['/cart/detailProduct']" [queryParams]="{id:id}" class="primary-btn">Ver producto</a>
+    </div>
+  </div>
+</div>

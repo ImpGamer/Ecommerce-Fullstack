@@ -1,0 +1,56 @@
+<app-navegation-header></app-navegation-header>
+<!-- Page Content -->
+ <div class="container">
+
+    <div class="card mb-3">
+      <div class="row no-gutters">
+        <div class="col-md-4"></div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h2>Registro</h2>
+
+          </div>
+        </div>
+      </div>
+    </div>
+	<form (ngSubmit)="onSubmit($event)">
+      <div class="form-group">
+        <label for="name">Nombre:</label> <input [(ngModel)]="user.firstname" type="text"
+          class="form-control" id="name" name="name"
+          placeholder="Ingrese su nombre" autocomplete="off">
+      </div>
+	  
+	   <div class="form-group">
+        <label for="surname">Apellido:</label> <input [(ngModel)]="user.lastname" type="text"
+          class="form-control" id="surname" name="surname"
+          placeholder="Ingrese su Apellido" autocomplete="off">
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email:</label> <input [(ngModel)]="user.email" type="email"
+          class="form-control" id="email" name="email"
+          placeholder="Ingrese su email" autocomplete="off">
+          <p style="color: red; font-weight: bold;">{{errorMessage}}</p>
+      </div>
+
+      <div class="form-group">
+        <label for="address">Dirección:</label> <input [(ngModel)]="user.address" type="text"
+          class="form-control" id="address" name="address"
+          placeholder="Ingrese su dirección" autocomplete="off">
+      </div>
+	   <div class="form-group">
+        <label for="cellphone">Teléfono:</label> <input [(ngModel)]="user.phone" type="text"
+          class="form-control" id="cellphone" name="cellphone"
+          placeholder="Ingrese su teléfono" autocomplete="off">
+      </div>
+
+      <div class="form-group">
+        <label for="password">Contraseña</label> <input [(ngModel)]="user.password" type="password"
+          class="form-control" id="password" name="password" placeholder="Ingrese su contraseña" autocomplete="off">
+      </div>
+      <div class="mt-5">
+        <button type="button" class="btn btn-success" (click)="register()">Registrarse</button>
+      </div>
+    </form>
+    <a [routerLink]="['/user/login']" class="card-link">Si ya posees una cuenta. Inicia Sesion</a>
+  </div>

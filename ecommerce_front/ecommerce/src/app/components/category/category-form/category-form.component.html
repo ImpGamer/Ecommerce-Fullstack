@@ -1,0 +1,31 @@
+<app-admin-header></app-admin-header>
+<!-- Page Content Add Categories -->
+<div class="container">
+    <!-- Page Heading/Breadcrumbs -->
+    <h1 class="mt-4 mb-3">
+        eCommerce <small>Categorías</small>
+    </h1>
+
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="">Categorias</a></li>
+        <li class="breadcrumb-item active">{{titleForm}}</li>
+    </ol>
+
+    <h2>{{titleForm}}</h2>
+    <form class="form-horizontal">
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="nombre">Nombre:</label>
+            <div class="col-sm-10">
+                <input [(ngModel)]="categoria.name" class="form-control" id="name" name="name"
+                    placeholder="Ingrese el nombre de la categoría" autocomplete="off" minlength="5">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-2">
+                <button (click)="saveCategory()" class="btn btn-success" style="margin-top: 10px;">
+                    <span class="glyphicon glyphicon-saved"></span> Guardar
+                </button>
+            </div>
+        </div>
+    </form>
+</div>

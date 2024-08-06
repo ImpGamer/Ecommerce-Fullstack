@@ -1,0 +1,25 @@
+<app-navegation-header></app-navegation-header>
+<main class="container">
+  <div class="main-content">
+    <div class="section-content section-content-p30">
+      <div class="container-fluid d-flex align-items-start">
+        <div *ngFor = "let product of products" class="row me-4">
+          <app-product
+          [id]="product.id"
+          [name]="product.name"
+          [price]="product.price"
+          [urlImage]="product.url_image"
+          ></app-product>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<!-- Footer -->
+<footer class="py-5 bg-dark">
+  <div class="container">
+    <p class="m-0 text-center text-white">Copyright &copy; Spring eCommerce 2024</p>
+  </div>
+  <!-- /.container -->
+</footer>

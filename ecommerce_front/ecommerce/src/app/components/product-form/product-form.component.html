@@ -1,0 +1,73 @@
+<app-admin-header></app-admin-header>
+<!-- Page Content -->
+<div class="container">
+
+    <!-- Page Heading/Breadcrumbs -->
+    <h1 class="mt-4 mb-3">
+      eCommerce <small>Productos</small>
+    </h1>
+  
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a routerLink="/admin">Home</a></li>
+      <li class="breadcrumb-item active">{{titleForm}}</li>
+    </ol>
+  
+    <h2>{{titleForm}}</h2>
+    <form class="form-horizontal" (ngSubmit)="addProduct()" enctype="multipart/form-data">
+
+      <div class="form-group row">
+        <label class="control-label col-sm-2" for="category">Categorias:</label>
+        <div class="col-sm-10">
+          <div class="combo-box">
+            <select class="form-select" aria-label="Default select example" [(ngModel)]="producto.categories" name="category" multiple>
+              <option *ngFor="let category of categoriesAvailable" [value]="category">{{category.name}}</option>
+            </select>
+          </div>
+        </div>
+      </div>
+  
+
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="nombre">Nombre:</label>
+        <div class="col-sm-10">
+          <input [(ngModel)]="producto.name" type="text" class="form-control" id="nombre" name="name"
+          [placeholder]="capture_id == 0?'Ingresa el nombre del producto':producto.name" autocomplete="off" required/>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="descripcion">Descripción:</label>
+        <div class="col-sm-10">
+          <textarea [(ngModel)]="producto.description" class="form-control" id="descripcion" name="description"
+          [placeholder]="capture_id == 0?'Ingresa la descripcion del producto':producto.description" required
+          autocomplete="off"> </textarea>
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="precio">Precio:</label>
+        <div class="col-sm-10">
+          <input [(ngModel)]="producto.price" type="number" class="form-control" step="any" id="precio" name="price"
+          [placeholder]="capture_id == 0?'Ingresa el precio del producto':producto.price" autocomplete="off" required>
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="img">Imagen:</label>
+        <div class="col-sm-10">
+          <input type="file" class="form-control-file" id="img" name="img" (change)="onFileChange($event)" accept=".jpg,.jpeg,.png">
+        </div>
+      </div>
+  
+      <div class="row mt-5">
+        <div class="col-sm-2">
+          <button type="submit" class="btn btn-success">
+           Guardar
+          </button>
+        </div>
+      </div>
+  
+    </form>
+  
+  </div>
+
+
